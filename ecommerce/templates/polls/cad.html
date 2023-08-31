@@ -1,0 +1,26 @@
+{%extends "polls/base.html"%}
+{%block base%}
+{%load static%}
+<div id="main">
+    <h1>Crie sua Conta</h1>
+    <form id="formulario" action="{%url 'cad'%}" method="post">
+       {% csrf_token %}
+       <input type="text" name="cNome" id= "cadNome" class="formType"placeholder="Nome" oninput="nameValidate()" onclick="okName()">
+       <span for="cadNome"class="spanCad" id="spanCadNome">o nome precisa ter no minimo 3 caracteres</span>
+       <span for="cadNome" class="spanCad" id="spanCadNomeExists">{{userValid}}</span>
+       <span for="cadNome" class="spanCad" id="spanCadNomeNot">{{notUser}}</span>
+       <input type="Email" name="cEmail" id="cadEmail" class="formType"placeholder="Email" oninput="emailValidate()" onclick="okEmail()">
+       <span for="cadEmail" class="spanCad" id="spanCadEmail">insira um email valido</span>
+       <span for="cadEmail" class="spanCad" id="spanCadEmailExists">{{emailValid}}</span>
+       <input type="password" name="cSenha" id="cadSenha" class="formType"placeholder="Senha" oninput="passwordValidate()">
+       <span for="cadSenha" class="spanCad" id="spanCadSenha">a senha precisa ter no minimo 8 caracteres</span>
+       <input type="checkbox" id="checkPass" name="checkP" onchange="passVisiForCad()">
+       <label for="checkPass" class="labelCheck" id="labelC">Senha visivel</label>
+       <input type="password" name="cConfSenha" id="cadConfSenha" class="formType"placeholder="Confirmar Senha" oninput="confPasswordValidate()">
+       <span for="cadConfSenha" class="spanCad" id="spanCadConfSenha">as senhas nao coincidem</span>
+       <a id="aLog" href="{%url 'login' %}">Ja tem uma conta?<a/>
+       <button type="submit" onclick="send(); return false" class="mainButton" id="cCriar">Criar</button>    
+</div>
+{%endblock%}
+</BODY>
+</HTML>

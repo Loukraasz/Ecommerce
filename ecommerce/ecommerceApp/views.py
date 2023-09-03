@@ -1,3 +1,4 @@
+import json
 from django.http import HttpResponse
 from django.shortcuts import render
 from ecommerceApp import connector
@@ -9,15 +10,29 @@ def cad(request):
     if request.method == "GET":
         return render(request, "polls/cad.html")
     elif request.method == "POST":
-        p = request.POST.get("cNome"),
-        x= request.POST.get("cEmail")
-        c = request.POST.get("cSenha")
-        p2 = ''.join(p)
-        print(f"{p2}")
-        data = {"name":f"{p2}", "stock":90, "category":"anto", "price":90.20}
+        name = request.POST.get("cNome"),
+        email= request.POST.get("cEmail")
+        password = request.POST.get("cSenha")
+        nameStr = ''.join(name)
+        data = {"name":f"{nameStr}", "email":email, "password":password}
         connector.post(data)
         return HttpResponse("bala neguim")
-    
 def login(request):
-    return render(request, "polls/login.html")
+    if request.method == 'GET':
+        return render(request, "polls/login.html")
+    else:
+        userLogin = request.POST.get("lNome")
+        passLogin = request.POST.get("lSenha")
+        user = connector.getOne(userLogin)
+        if user.status_code == 404:
+            return HttpResponse("paiaUser")
+        elif user.status_code == 200:
+            jUser = json.loads(user.text)
+            if jUser['password'] == passLogin:
+                return HttpResponse("descubra")
+            else:
+                return HttpResponse("paia")
+       
+            
+        
 

@@ -1,0 +1,39 @@
+@charset "UTF-8";
+body#corpo{
+    background-image: url("../img/back2.jpg");
+}
+header#cabecalho h1{
+    color: #7215b9;
+    margin-top: 1px;
+    margin-left: 1300px;
+    font-style: italic;
+    font-family: cursive, sans-serif;
+    font-size: 60px;
+}
+div#main{
+    width: 400px;
+    height: 450px;
+    margin: auto;
+    border:3px solid rgba(255,179,253,0.5);
+    background:transparent;
+    border-radius:20px;
+}
+div#main h1{
+    height: 50px;
+    color:aliceblue;
+    font-family: sans-serif;
+    text-align: center;
+}
+button.mainButton{
+    position: absolute;
+    font-family: sans-serif;
+    width: 100px;
+    height: 50px;
+    margin-top: 10px;
+    margin-left: 150px;
+    border-radius: 10px;
+}
+label.labelCheck{
+    display: block;
+    color:#8600ff;
+}

@@ -1,6 +1,6 @@
 @charset "UTF-8";
 body#corpo{
-    background-image: url("../img/");
+    background-image: url("../img/base.jpg");
 }
 header#cabecalho h1{
     color: #7215b9;

@@ -1,0 +1,15 @@
+{%extends "polls/index.html"%}
+{%block base%}
+{%load static%}
+<link rel="stylesheet" type="text/css" href="{%static 'ecommerceApp/css/confirmedEmail.css'%}">
+<div id="main">
+<h1>Recuperando sua senha</h1>
+<form id="formConfirmEmail" action="{%url 'confirmedEmail'%}" method='post'>
+    {% csrf_token %}
+    <input type="text" class="inpFormConf" id="inpFormConfEmail" name="validateCode"placeholder="Insira o Codigo enviado ao seu email">
+    <button class='mainButton' id="confEmail">Confirmar</button>
+</form>
+</div>
+{%endblock%}
+</BODY>
+</HTML>

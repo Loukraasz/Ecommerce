@@ -2,6 +2,10 @@
 {%block base%}
 {%load static%}
 </div>
+<form action="{%url 'platform'%}" method="POST">
+    {%csrf_token%}
+    <button >Sair</button>
+</form>
 {%endblock%}
 </BODY>
 </HTML>

@@ -1,0 +1,31 @@
+input.inpFormConf{
+    font-family: sans-serif;
+    height:30px;
+    width: 300px;
+    margin-top: 10px;
+    margin-left: 50px;
+    border-radius: 7px;
+    display: block;
+    box-shadow:2px black;
+    border: 2px solid darkslateblue;
+    
+    &:hover{
+        transition: 500ms;
+        border: 2px solid rgb(252, 189, 255);
+        background-color: white;
+        &::placeholder{
+            color: aliceblue;
+        }
+    }
+    &:focus{
+        border: 3px solid  rgb(252, 189, 255);
+        transition: 0ms;
+        background-color: white;
+        &::placeholder{
+            color: aliceblue;
+        }
+    }
+}
+button#confEmail{
+    margin-top: 30px;
+}

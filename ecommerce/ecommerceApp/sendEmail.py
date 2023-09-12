@@ -21,9 +21,10 @@ def sendEmails(emailToSend):
     email.Subject = "Halflix Support"
     email.HTMLBody=f"aqui esta seu codigo para a verificacao de senha {recCode}"
     email.Send()
-   
+    print(recCode)
 
 final = recCode
+
 
 
 

@@ -15,12 +15,25 @@ def cad(request):
         email= request.POST.get("cEmail")
         password = request.POST.get("cSenha")
         nameStr = ''.join(name)
-        data = {"name":f"{nameStr}", "email":email, "password":password}
+        data = {"name":f"{nameStr}", "email":email, "password":password, "logged":"off"}
         connector.post(data)
         return render(request, "polls/login.html")
-    
+
+
 def platform(request):
-    return render(request, "polls/platform.html")
+    if request.method == 'GET':
+        try:
+            if dataLog["logged"] == "off" or dataLog["logged"] == "":
+                return HttpResponse("fds")
+        except NameError:
+                invalid = "Voce precisa fazer login para continuar"
+                invalids = {"invalid":invalid}
+                return render(request, 'polls/login.html', invalids)
+    else:
+        dataLog['logged'] = "off"
+        connector.put(dataLog, jUser['email'])
+        return render(request, "polls/login.html")
+        
 
     
 def login(request):
@@ -35,26 +48,32 @@ def login(request):
             invalids = {"invalid":invalid}
             return render(request, 'polls/login.html', invalids)
         elif user.status_code == 200:
+            global jUser
             jUser = json.loads(user.text)
             if jUser['password'] == passLogin:
-                print(jUser)
-                data = {"name": jUser['name'], "email" : jUser['email'], "password": jUser['password'], "logged": "on"}
-                print(data)
-                connector.put(data, jUser['email'])
-                return HttpResponse("platform")
+                global dataLog
+                dataLog = {"name":jUser["name"],"email":jUser["email"],"password":jUser["password"],"logged":"on"}
+                connector.put(dataLog, jUser['email'])
+                return render(request, "polls/platform.html")
+            else:
+                invalid = "Usuario ou senhas invalidos"
+                invalids = {"invalid":invalid}
+                return render(request, 'polls/login.html', invalids)
+                
             
 def passwordChange(request):
     if request.method == 'GET':
         return render(request, 'polls/passwordChange.html')
     else:
         global userPassLogin
-        userPassLogin = request.POST.get("lNome")
+        userPassLogin = request.POST.get("recEmail")
         user = connector.getOne(userPassLogin)
         if user.status_code == 404:
             emailInvalid = "email nao existente"
             emailInvalids = {'emailInvalid':emailInvalid}
             return render(request, "polls/passwordChange.html", emailInvalids)
         elif user.status_code == 200:
+            print(userPassLogin)
             sendEmail.sendEmails(userPassLogin)
             return render(request, 'polls/confirmedEmail.html')
             
@@ -76,7 +95,11 @@ def newPassword(request):
         return render(request, "polls/newPassword.html")
     else:
         np = request.POST.get("newPassword")
-        print(userPassLogin)
+        user = connector.getOne(userPassLogin)
+        jUser = json.loads(user.text)
+        data = {"name":jUser['name'], "email":jUser['email'], "password": np , "logged":"off"}
+        connector.put(data, jUser['email'])
+        return render(request, "polls/login.html")
         
        
             

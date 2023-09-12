@@ -12,7 +12,7 @@ input.logType{
     &:hover{
         transition: 500ms;
         border: 2px solid rgb(252, 189, 255);
-        background-color: transparent;
+        background-color: white;
         &::placeholder{
             color: aliceblue;
         }
@@ -20,7 +20,7 @@ input.logType{
     &:focus{
         border: 3px solid  rgb(252, 189, 255);
         transition: 0ms;
-        background-color: transparent;
+        background-color: white;
         &::placeholder{
             color: aliceblue;
         }
@@ -34,14 +34,14 @@ a#aForgotPass{
     margin-top: 20px;
     margin-left: 250px;
     text-decoration: none;
-    color:#8600ff;
+    color:#0077ff;
 }
 a#aRegister{
     position: absolute;
     margin-top: 50px;
     margin-left: 100px;
     text-decoration: none;
-    color:#8600ff;
+    color:#0077ff;
 }
 span#spanLogPassIn{
     display: block;

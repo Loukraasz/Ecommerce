@@ -8,9 +8,7 @@ def getAll():
 def post(data):
     requests.post("http://localhost:8080/ecUserPost", data=json.dumps(data), headers={"Content-Type":"application/json"})
 def put(data, email):
-    requests.post(f"http://localhost:8080/ecUserPut/{email}", data=json.dumps(data), headers={"Content-Type":"application/json"})
+    requests.put(f"http://localhost:8080/ecUserPut/{email}", data=json.dumps(data), headers={"Content-Type":"application/json"})
 def delete(email):
-    requests.post(f"http://localhost:8080/ecUserDelete/{email}")
-
-
+    requests.delete(f"http://localhost:8080/ecUserDelete/{email}")
 

@@ -1,0 +1,37 @@
+img.banner{
+    width: 250px;
+    height: 400px;
+    box-shadow: 30px 30px 30px 5px black;
+    &:hover{
+        transition: 500ms;
+        transform:scale(1.25);
+        
+    }
+}
+img#banner_court{
+    position: absolute;
+    margin-left: 450px;
+}
+img#banner_revolution{
+    position:absolute;
+    margin-left: 850px;
+}
+img#banner_max{
+    position:absolute;
+    margin-left: 1250px;
+}
+img#banner_excee{
+    position:absolute;
+    margin-left: 450px;
+    margin-top: 500px;
+}
+img#banner_soon{
+    position:absolute;
+    margin-left: 850px;
+    margin-top: 500px;
+}
+img#banner_downshifter{
+    position:absolute;
+    margin-left: 1250px;
+    margin-top: 500px;
+}

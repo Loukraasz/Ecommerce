@@ -2,6 +2,35 @@
 {%block base%}
 {%load static%}
 </div>
+<link rel="stylesheet" type="text/css" href="{%static 'ecommerceApp/css/platform.css'%}">
+<div id="court">
+    <a href="{%url 'court'%}">
+    <img class="banner"id="banner_court"src="{%static 'ecommerceApp/img/court.jpg'%}"></img>
+    </a>
+</div>
+<div id="excee">
+    <a href="{%url 'excee'%}">
+        <img class="banner"id="banner_excee"src="{%static 'ecommerceApp/img/excee.jpg'%}"></img>
+        </a>
+</div>
+<div id="downshifter">
+    <a href="{%url 'downshifter'%}">
+        <img class="banner"id="banner_downshifter"src="{%static 'ecommerceApp/img/downshifter.jpg'%}"></img>
+        </a>
+</div>
+<div id="revolution">
+    <a href="{%url 'revolution'%}">
+        <img class="banner"id="banner_revvolution"src="{%static 'ecommerceApp/img/revolution.jpg'%}"></img>
+        </a>
+</div>
+<div id="max">
+    <a href="{%url 'max'%}">
+        <img class="banner"id="banner_max"src="{%static 'ecommerceApp/img/max.jpg'%}"></img>
+        </a>
+</div>
+<div id="soon">
+        <img class="banner"id="banner_soon"src="{%static 'ecommerceApp/img/soon.jpg'%}"></img>
+        </a>
 <form action="{%url 'platform'%}" method="POST">
     {%csrf_token%}
     <button >Sair</button>

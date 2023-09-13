@@ -23,19 +23,27 @@ def cad(request):
 def platform(request):
     if request.method == 'GET':
         try:
-            if dataLog["logged"] == "off" or dataLog["logged"] == "":
-                return HttpResponse("fds")
+            if dataLog["logged"] == "off":
+                invalid = "Voce precisa fazer login para continuar"
+                invalids = {"invalid":invalid}
+                return render(request, 'polls/login.html', invalids)
         except NameError:
                 invalid = "Voce precisa fazer login para continuar"
                 invalids = {"invalid":invalid}
                 return render(request, 'polls/login.html', invalids)
     else:
-        dataLog['logged'] = "off"
-        connector.put(dataLog, jUser['email'])
-        return render(request, "polls/login.html")
-        
+        try:
+            print(jUserLog)
+            print("foudase")
+            dataLog['logged'] = "off"
+            connector.put(dataLog, jUser['email'])
+            return render(request, "polls/login.html")
+        except NameError:
+            jUserLog['logged'] = "off"
+            connector.put(jUserLog, jUserLog['email'])
+            return render(request, "polls/login.html")
 
-    
+
 def login(request):
     if request.method == 'GET':
         return render(request, "polls/login.html")
@@ -79,7 +87,17 @@ def passwordChange(request):
             
 def confirmedEmail(request):
     if request.method == "GET":
-        return render(request, 'polls/confirmedEmail.html')
+        try:
+            if userPassLogin != None:
+                return render(request, "polls/newPassword.html")
+            else:
+                emailInvalid = "primeiro, informe seu email"
+                emailInvalids = {'emailInvalid':emailInvalid}
+                return render(request, "polls/passwordChange.html", emailInvalids)
+        except NameError:
+                emailInvalid = "primeiro, informe seu email"
+                emailInvalids = {'emailInvalid':emailInvalid}
+                return render(request, "polls/passwordChange.html", emailInvalids)
     else:
         codeValidate = request.POST.get("validateCode")
         if codeValidate == sendEmail.final:
@@ -92,7 +110,17 @@ def confirmedEmail(request):
                   
 def newPassword(request):
     if request.method == "GET":
-        return render(request, "polls/newPassword.html")
+        try:
+            if userPassLogin != None:
+                return render(request, "polls/newPassword.html")
+            else:
+                emailInvalid = "primeiro, informe seu email"
+                emailInvalids = {'emailInvalid':emailInvalid}
+                return render(request, "polls/passwordChange.html", emailInvalids)
+        except NameError:
+                emailInvalid = "primeiro, informe seu email"
+                emailInvalids = {'emailInvalid':emailInvalid}
+                return render(request, "polls/passwordChange.html", emailInvalids)
     else:
         np = request.POST.get("newPassword")
         user = connector.getOne(userPassLogin)
@@ -100,7 +128,42 @@ def newPassword(request):
         data = {"name":jUser['name'], "email":jUser['email'], "password": np , "logged":"off"}
         connector.put(data, jUser['email'])
         return render(request, "polls/login.html")
-        
+    
+def log(request):
+    if request.method == "GET":
+        return render(request, "polls/log.html")
+    else:
+        userL = request.POST.get("lNome")
+        user = connector.getOne(userL)
+        if user.status_code == 404:
+            invalid = "email invalidos"
+            invalids = {"invalid":invalid}
+            return render(request, 'polls/log.html', invalids)
+        elif user.status_code == 200:
+            global jUserLog
+            jUserLog = json.loads(user.text)
+            if jUserLog['logged'] == "off":
+                invalid = "Entre novamente"
+                invalids = {"invalid":invalid}
+                return render(request, 'polls/log.html', invalids)
+            elif jUserLog["logged"] == "on":
+                return render(request, "polls/platform.html")
+            
+         
+
+
+def court(request):
+    return render(request, "polls/court.html")
+def max(request):
+    return render(request, "polls/max.html")
+def revolution(request):
+    return render(request, "polls/revolution.html")
+def excee(request):
+    return render(request, "polls/excee.html")
+def downshifter(request):
+    return render(request, "polls/downshifter.html")
+
+
        
             
         

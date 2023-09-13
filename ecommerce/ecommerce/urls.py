@@ -9,6 +9,12 @@ urlpatterns = [
     path('cad/',views.cad , name="cad"),
     path("platform/",views.platform, name="platform"),
     path("passwordChange/", views.passwordChange, name="passwordChange"),
-    path("passwordChange/confirmedEmail", views.confirmedEmail, name="confirmedEmail"),
-    path("passwordChange/newPassword", views.newPassword, name="newPassword")
+    path("passwordChange/confirmedEmail/", views.confirmedEmail, name="confirmedEmail"),
+    path("passwordChange/newPassword/", views.newPassword, name="newPassword"),
+    path("court/", views.court, name="court"),
+    path("downshifter/", views.downshifter, name="downshifter"),
+    path("max/", views.max, name="max"),
+    path("revolution/", views.revolution, name="revolution"),
+    path("excee/", views.excee, name="excee"),
+    path("log/", views.log, name="log")
 ]

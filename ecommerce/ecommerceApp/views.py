@@ -1,6 +1,7 @@
 import json
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
+from requests import JSONDecodeError
 from ecommerceApp import connector
 from ecommerceApp import sendEmail
 
@@ -15,36 +16,41 @@ def cad(request):
         email= request.POST.get("cEmail")
         password = request.POST.get("cSenha")
         nameStr = ''.join(name)
-        data = {"name":f"{nameStr}", "email":email, "password":password, "logged":"off"}
+        data = {"name":f"{nameStr}", "email":email, "password":password, "sessionId":"."}
         connector.post(data)
         return render(request, "polls/login.html")
 
 
 def platform(request):
     if request.method == 'GET':
-        try:
-            invalid = "Voce precisa fazer login para continuar"
-            invalids = {"invalid":invalid}
-            return render(request, 'polls/login.html', invalids)  
-        except NameError:
-            invalid = "Voce precisa fazer login para continuar"
-            invalids = {"invalid":invalid}
-            return render(request, 'polls/login.html', invalids)
+            sessionUser = request.COOKIES.get("sessionid")
+            userSession = connector.getSid(sessionUser)
+            print(sessionUser)
+            print(userSession)
+            if not userSession:
+                invalid = "Voce precisa fazer login para continuar"
+                invalids = {"invalid":invalid}
+                return render(request, 'polls/login.html', invalids)
+            else:
+                jUserSession = json.loads(userSession.text)
+                if jUserSession["sessionId"] == sessionUser:
+                    return render(request, "polls/platform.html")
+                else:
+                    invalid = "Voce precisa fazer login para continuar"
+                    invalids = {"invalid":invalid}
+                    return render(request, 'polls/login.html', invalids)      
     else:
-        try:
-            dataLog['logged'] = "off"
-            connector.put(dataLog, jUser['email'])
-            return render(request, "polls/login.html")
-        except ValueError:
-            jUserLog['logged'] = "off"
-            connector.put(jUserLog, jUserLog['email'])
+        sessionUser = request.COOKIES.get("sessionid")
+        userSession = connector.getSid(sessionUser)
+        jUserSession = json.loads(userSession.text)
+        if jUserSession["sessionId"] == sessionUser:
+            dataLog = {"name":jUserSession["name"],"email":jUserSession["email"],"password":jUserSession["password"],"sessionId":"."}
+            connector.put(dataLog, jUserSession['email'])
             return render(request, "polls/login.html")
 
 
 def login(request):
     if request.method == 'GET':
-        request.session.setdefault("teste", "po")
-        print(request.session["teste"])
         return render(request, "polls/login.html")
     else:
         userLogin = request.POST.get("lNome")
@@ -57,15 +63,19 @@ def login(request):
         elif user.status_code == 200:
             global jUser
             jUser = json.loads(user.text)
+            global sessionUser
+            sessionUser = request.COOKIES.get("sessionid")
+            print(sessionUser)
             if jUser['password'] == passLogin:
                 global dataLog
-                dataLog = {"name":jUser["name"],"email":jUser["email"],"password":jUser["password"],"logged":"on"}
+                dataLog = {"name":jUser["name"],"email":jUser["email"],"password":jUser["password"],"sessionId":sessionUser}
                 connector.put(dataLog, jUser['email'])
                 return render(request, "polls/platform.html")
             else:
                 invalid = "Usuario ou senhas invalidos"
                 invalids = {"invalid":invalid}
                 return render(request, 'polls/login.html', invalids)
+            
                 
             
 def passwordChange(request):

@@ -11,14 +11,17 @@ img.banner{
 img#banner_court{
     position: absolute;
     margin-left: 450px;
+    margin-top:10px;
 }
 img#banner_revolution{
     position:absolute;
     margin-left: 850px;
+    margin-top:10px;
 }
 img#banner_max{
     position:absolute;
     margin-left: 1250px;
+    margin-top:10px;
 }
 img#banner_excee{
     position:absolute;
@@ -27,11 +30,11 @@ img#banner_excee{
 }
 img#banner_soon{
     position:absolute;
-    margin-left: 850px;
+    margin-left: 1250px;
     margin-top: 500px;
 }
 img#banner_downshifter{
     position:absolute;
-    margin-left: 1250px;
+    margin-left: 850px;
     margin-top: 500px;
 }

@@ -23,22 +23,19 @@ def cad(request):
 def platform(request):
     if request.method == 'GET':
         try:
-            if dataLog["logged"] == "off":
-                invalid = "Voce precisa fazer login para continuar"
-                invalids = {"invalid":invalid}
-                return render(request, 'polls/login.html', invalids)
+            invalid = "Voce precisa fazer login para continuar"
+            invalids = {"invalid":invalid}
+            return render(request, 'polls/login.html', invalids)  
         except NameError:
-                invalid = "Voce precisa fazer login para continuar"
-                invalids = {"invalid":invalid}
-                return render(request, 'polls/login.html', invalids)
+            invalid = "Voce precisa fazer login para continuar"
+            invalids = {"invalid":invalid}
+            return render(request, 'polls/login.html', invalids)
     else:
         try:
-            print(jUserLog)
-            print("foudase")
             dataLog['logged'] = "off"
             connector.put(dataLog, jUser['email'])
             return render(request, "polls/login.html")
-        except NameError:
+        except ValueError:
             jUserLog['logged'] = "off"
             connector.put(jUserLog, jUserLog['email'])
             return render(request, "polls/login.html")
@@ -46,6 +43,8 @@ def platform(request):
 
 def login(request):
     if request.method == 'GET':
+        request.session.setdefault("teste", "po")
+        print(request.session["teste"])
         return render(request, "polls/login.html")
     else:
         userLogin = request.POST.get("lNome")

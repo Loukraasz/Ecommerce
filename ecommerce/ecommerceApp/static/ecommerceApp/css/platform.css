@@ -8,33 +8,37 @@ img.banner{
         
     }
 }
+button#exitBt{
+    margin-left: 1700px;
+
+}
 img#banner_court{
     position: absolute;
     margin-left: 450px;
-    margin-top:10px;
+    margin-top:50px;
 }
 img#banner_revolution{
     position:absolute;
     margin-left: 850px;
-    margin-top:10px;
+    margin-top:50px;
 }
 img#banner_max{
     position:absolute;
     margin-left: 1250px;
-    margin-top:10px;
+    margin-top:50px;
 }
 img#banner_excee{
     position:absolute;
     margin-left: 450px;
-    margin-top: 500px;
+    margin-top: 530px;
 }
 img#banner_soon{
     position:absolute;
     margin-left: 1250px;
-    margin-top: 500px;
+    margin-top: 530px;
 }
 img#banner_downshifter{
     position:absolute;
     margin-left: 850px;
-    margin-top: 500px;
+    margin-top: 530px;
 }

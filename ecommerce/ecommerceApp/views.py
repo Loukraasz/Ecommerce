@@ -25,8 +25,6 @@ def platform(request):
     if request.method == 'GET':
             sessionUser = request.COOKIES.get("sessionid")
             userSession = connector.getSid(sessionUser)
-            print(sessionUser)
-            print(userSession)
             if not userSession:
                 invalid = "Voce precisa fazer login para continuar"
                 invalids = {"invalid":invalid}
@@ -61,6 +59,7 @@ def login(request):
             invalids = {"invalid":invalid}
             return render(request, 'polls/login.html', invalids)
         elif user.status_code == 200:
+            request.session["session"] = userLogin
             global jUser
             jUser = json.loads(user.text)
             global sessionUser

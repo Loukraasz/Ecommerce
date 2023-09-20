@@ -16,5 +16,5 @@ urlpatterns = [
     path("max/", views.max, name="max"),
     path("revolution/", views.revolution, name="revolution"),
     path("excee/", views.excee, name="excee"),
-    path("log/", views.log, name="log")
+    path("teste/", views.teste, name="teste")
 ]

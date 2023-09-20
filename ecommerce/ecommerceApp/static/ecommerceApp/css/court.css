@@ -1,23 +1,72 @@
+img.banner{
+    border-radius: 7px;
+    width: 250px;
+    height: 400px;
+    box-shadow: 20px 20px 20px 5px rgb(108, 100, 100);
+    &:hover{
+        transition: 500ms;
+        transform:scale(1.1);
+        
+    }
+}
 img#banner_court{
     position: absolute;
-    margin-left: 10px;
-    margin-top:100px;
+    margin-left: 350px;
+    margin-top:20px;
     height:450px;
-    width:300px;
+    width:350px;
+}
+img#banner_court_acima{
+    position: absolute;
+    margin-left: 850px;
+    margin-top:20px;
+    height:450px;
+    width:350px;
+}
+img#banner_court_back{
+    position: absolute;
+    margin-left: 850px;
+    margin-top:520px;
+    height:450px;
+    width:350px;
+}
+img#banner_court_verso{
+    position: absolute;
+    margin-left: 350px;
+    margin-top:520px;
+    height:450px;
+    width:350px;
 }
 label#price{
-    margin-left: 300px;
-    color:rgb(0, 0, 0);
+    position: absolute;
+    margin-left: 150px;
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
 }
 label#name{
-    margin-left: 300px;
-    color:rgb(0, 0, 0);
+    position: absolute;
+    margin-left: 0px;
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
 }
 aside#inf{
     position:absolute;
-    margin-left:1250px;
+    margin-left:1450px;
     display:block;  
-    width:600px;
-    height:100%;
-    background-color: white;
+    width:400px;
+    height:99%;
+    background-color: rgba(255, 254, 254, 0.1);
+    border-radius: 10px;
+}
+p{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h2{
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
 }

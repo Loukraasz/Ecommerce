@@ -170,6 +170,8 @@ def excee(request):
     return render(request, "polls/excee.html")
 def downshifter(request):
     return render(request, "polls/downshifter.html")
+def teste(request):
+    return render(request, "polls/teste.html")
 
 
        

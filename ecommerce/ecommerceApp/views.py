@@ -64,7 +64,6 @@ def login(request):
             jUser = json.loads(user.text)
             global sessionUser
             sessionUser = request.COOKIES.get("sessionid")
-            print(sessionUser)
             if jUser['password'] == passLogin:
                 global dataLog
                 dataLog = {"name":jUser["name"],"email":jUser["email"],"password":jUser["password"],"sessionId":sessionUser}
@@ -170,8 +169,8 @@ def excee(request):
     return render(request, "polls/excee.html")
 def downshifter(request):
     return render(request, "polls/downshifter.html")
-def teste(request):
-    return render(request, "polls/teste.html")
+def court_specs(request):
+    return render(request, "polls/court_specs.html")
 
 
        

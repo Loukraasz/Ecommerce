@@ -42,3 +42,24 @@ img#banner_downshifter{
     margin-left: 850px;
     margin-top: 530px;
 }
+label#price{
+    position: absolute;
+    margin-left: 150px;
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+label#name{
+    position: absolute;
+    margin-left: 0px;
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+aside#info_court{
+    display: none;
+    position:absolute;
+    margin-left:1450px; 
+    width:400px;
+    height:99%;
+    background-color: rgba(255, 254, 254, 0.1);
+    border-radius: 10px;
+}

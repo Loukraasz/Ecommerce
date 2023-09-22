@@ -3,10 +3,33 @@
 {%load static%}
 </div>
 <link rel="stylesheet" type="text/css" href="{%static 'ecommerceApp/css/platform.css'%}">
+<script src="../static/ecommerceApp/javascript/aside.js"></script>
 <div id="court">
     <a href="{%url 'court'%}">
-    <img class="banner"id="banner_court"src="{%static 'ecommerceApp/img/court.jpg'%}"></img>
+    <img class="banner"id="banner_court" name="teste" onmouseover="denis()" onmouseout="remove()"="{%static 'ecommerceApp/img/court/court.jpg'%}"></img>
     </a>
+    <aside id="info_court">
+        <label id="price">R$390,00</label>
+        <label id="name">Court Royale 2</label>
+        <p><h1>UM ÍCONE RETRÔ DO TÊNIS.</h1>
+    
+            <p>
+            O brilho do passado encontra os tempos modernos. O novo Nike Court Royale 2 Next Nature é feito com pelo menos 20% de materiais reciclados por peso. Substituímos o couro de alto impacto por couro sintético para um look moderno, suave e versátil. O grande Swoosh retrô adiciona um apelo vintage.</p>
+            
+            <h2>
+            Benefícios</h2>
+            
+            <p>A parte de cima em material sintético é macia e combina com tudo.
+            A sola em padrão espinha de peixe adiciona tração e durabilidade.
+            A boca acolchoada de cano baixo tem um look elegante e confortável.</p>
+            
+            <h2>Detalhes do produto</h2>
+            
+            <h2>Palmilha confortável</h2>
+            <h2>Cadarços feitos com 100% de poliéster reciclado</h2>
+    
+        </p>
+    </aside>
 </div>
 <div id="excee">
     <a href="{%url 'excee'%}">
@@ -29,7 +52,7 @@
         </a>
 </div>
 <div id="soon">
-        <img class="banner"id="banner_soon"src="{%static 'ecommerceApp/img/soon.jpg'%}"></img>
+        <img class="banner"id="banner_soon"src="{%static 'ecommerceApp/img/coming_soon.jpg'%}"></img>
         </a>
 <form action="{%url 'platform'%}" method="POST">
     {%csrf_token%}

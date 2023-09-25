@@ -22,12 +22,15 @@ function removeAside(aside){
     aside.style.display="none";
 
 }
-function denis(){
-        setMargin(banner_court,banner_revolution,banner_max,banner_excee,banner_downshifter, banner_soon)
-        setAside(info_court)
+function set(img1,img2,img3,img4,img5,img6,info){
+        setMargin(img1,img2,img3,img4,img5,img6)
+        setAside(info)
     }
-function remove(){
+function remove(info){
     removeMargin(banner_court,banner_revolution,banner_max,banner_excee,banner_downshifter, banner_soon)
-    removeAside(info_court)
+    removeAside(info)
     }
+function onlyRight(img1,img2,img3,img4,img5,img6,info){
+    set(img1,img2,img3,img4,img5,img6,info)
+}
 

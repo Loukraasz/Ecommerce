@@ -9,42 +9,42 @@ img.banner{
     }
 }
 button#exitBt{
-    margin-left: 1700px;
+    margin-left: 1800px;
 
 }
 img#banner_court{
     position: absolute;
-    margin-left: 450px;
+    margin-left: 500px;
     margin-top:50px;
 }
 img#banner_revolution{
     position:absolute;
-    margin-left: 850px;
+    margin-left: 860px;
     margin-top:50px;
 }
 img#banner_max{
     position:absolute;
-    margin-left: 1250px;
+    margin-left: 1220px;
     margin-top:50px;
 }
 img#banner_excee{
     position:absolute;
-    margin-left: 450px;
+    margin-left: 500px;
     margin-top: 530px;
 }
 img#banner_soon{
     position:absolute;
-    margin-left: 1250px;
+    margin-left: 1220px;
     margin-top: 530px;
 }
 img#banner_downshifter{
     position:absolute;
-    margin-left: 850px;
+    margin-left: 860px;
     margin-top: 530px;
 }
 label#price{
     position: absolute;
-    margin-left: 150px;
+    margin-left: 250px;
     color:white;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -54,12 +54,26 @@ label#name{
     color:white;
     font-family: Arial, Helvetica, sans-serif;
 }
-aside#info_court{
+aside.info{
     display: none;
     position:absolute;
-    margin-left:1450px; 
-    width:400px;
+    margin-left:1520px; 
+    width:330px;
     height:99%;
     background-color: rgba(255, 254, 254, 0.1);
     border-radius: 10px;
+}
+p{ 
+
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1{
+    padding-top: 100px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h2{
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
 }

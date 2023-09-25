@@ -6,9 +6,9 @@
 <script src="../static/ecommerceApp/javascript/aside.js"></script>
 <div id="court">
     <a href="{%url 'court'%}">
-    <img class="banner"id="banner_court" name="teste" onmouseover="denis()" onmouseout="remove()"="{%static 'ecommerceApp/img/court/court.jpg'%}"></img>
+    <img class="banner"id="banner_court" name="teste" onmouseover="set(banner_court,banner_excee,banner_downshifter,banner_max,banner_revolution,banner_soon,info_court)" onmouseout="remove(info_court)"src="{%static 'ecommerceApp/img/court/court1.jpg'%}"></img>
     </a>
-    <aside id="info_court">
+    <aside class="info" id="info_court">
         <label id="price">R$390,00</label>
         <label id="name">Court Royale 2</label>
         <p><h1>UM ÍCONE RETRÔ DO TÊNIS.</h1>
@@ -33,26 +33,114 @@
 </div>
 <div id="excee">
     <a href="{%url 'excee'%}">
-        <img class="banner"id="banner_excee"src="{%static 'ecommerceApp/img/excee.jpg'%}"></img>
+        <img class="banner"id="banner_excee" onmouseover="set(banner_excee,banner_court,banner_downshifter,banner_max,banner_revolution,banner_soon, info_excee)" onmouseout="remove(info_excee)" src="{%static 'ecommerceApp/img/excee/excee.jpg'%}"></img>
         </a>
+        <aside class="info" id="info_excee">
+            <label id="price">R$399,99</label>
+            <label id="name">Air Max Excee Feminino</label>
+            <p><h1>DESIGN ICÔNICO COM UM TOQUE MODERNO.</h1>
+        
+                <p>
+                    Inspirado no Nike Air Max 90, o Nike Air Max Excee celebra um clássico com um visual repaginado. O design de linhas alongadas e proporções distorcidas na parte de cima elevam um ícone a um patamar moderno.</p>
+                
+                <h2>
+                    Ar visível</h2>
+                
+                <p>A unidade Air é visível através de três janelas criando um look atualizado.</p>
+                
+                <h2>Conforto e leveza</h2>
+
+                <p>A entressola de espuma e a sola com cápsulas de espuma e borracha oferecem conforto e durabilidade com muita leveza.</p>
+                
+                <h2>Toque moderno</h2>
+                <p>As linhas de design alongadas homenageiam o Air Max 90, ao mesmo tempo que o modernizam de forma irreverente.</p>
+        
+            </p>
+        </aside>
 </div>
 <div id="downshifter">
     <a href="{%url 'downshifter'%}">
-        <img class="banner"id="banner_downshifter"src="{%static 'ecommerceApp/img/downshifter.jpg'%}"></img>
+        <img class="banner"id="banner_downshifter" onmouseover="set(banner_downshifter,banner_excee,banner_court,banner_max,banner_revolution,banner_soon,info_downshifter)" onmouseout="remove(info_downshifter)" src="{%static 'ecommerceApp/img/downshifter/downshifter.jpg'%}"></img>
         </a>
+        <aside class="info" id="info_downshifter">
+            <label id="price">R$349,99</label>
+            <label id="name">Downshifter 12 Feminino</label>
+            <p><h1>SUA CORRIDA COMEÇA COM UM SUPORTE ESTÁVEL.</h1>
+        
+                <p>
+                    Dê os primeiros passos na jornada de corrida com o Nike Downshifter 12. Ele conta com sustentação ajustada para proporcionar uma passada estável e leve que transita facilmente entre seu treino e seu dia a dia. Esse tênis dá continuidade à nossa jornada pela sustentabilidade em um design feito com pelo menos 20% de conteúdo reciclado por peso. A jornada te espera. Amarre os cadarços e pegue a estrada.</p>
+                
+                <h2>
+                    Fresco, leve, rápido</h2>
+                
+                <p>A tela em toda a parte de cima proporciona uma sensação leve e ventilada. A tela é posicionada nas principais zonas do antepé com base nas opiniões de corredores, proporcionando frescor onde você mais precisa.</p>
+                
+                <h2>Amarre os cadarços, aumente o suporte</h2>
+
+                <p>Garanta mais estabilidade com a faixa de ajuste no médio pé. Ela age com os cadarços que, quanto mais justos, mais firmeza proporcionam aos pés. </p>
+                
+                <h2>Corra com intensidade e maciez</h2>
+                <p>A espuma extremamente macia na entressola ajuda a amortecer cada passo. A altura elevada cria uma sensação mais suave durante a corrida.</p>
+        
+            </p>
+        </aside>
 </div>
 <div id="revolution">
     <a href="{%url 'revolution'%}">
-        <img class="banner"id="banner_revolution"src="{%static 'ecommerceApp/img/revolution 6.jpg'%}"></img>
+        <img class="banner"id="banner_revolution" onmouseover="set(banner_revolution,banner_downshifter,banner_excee,banner_court,banner_max,banner_soon,info_revolution)" onmouseout="remove(info_revolution)" src="{%static 'ecommerceApp/img/revolution/revolution.jpg'%}"></img>
         </a>
+        <aside class="info" id="info_revolution">
+            <label id="price">R$229,99</label>
+            <label id="name">Revolution 6 Masculino</label>
+            <p><h1>CONFORTO VERSÁTIL COM AMORTECIMENTO FLEXÍVEL.</h1>
+        
+                <p>
+                    Um brinde aos novos começos entre você e as calçadas. Amarre os cadarços 100% reciclados e defina o ritmo ao começar sua corrida com a sensação de maciez do Nike Revolution 6 Next Nature. Sabemos que o conforto é a chave para uma corrida bem-sucedida, então adicionamos amortecimento e flexibilidade para uma passada mais macia. É a evolução de um favorito com design ventilado, feito com pelo menos 20% de conteúdo reciclado por peso.</p>
+                
+                <h2>
+                    Design simples</h2>
+                
+                <p>A tela macia é colocada no antepé e ao longo da boca para uma sensação de conforto. Os revestimentos adicionais acrescentam durabilidade.</p>
+                
+                <h2>Mais flexibilidade</h2>
+
+                <p>Uma entressola de espuma oferece uma passada mais suave que a do Revolution 5. A sola tem um design computadorizado que cria um efeito natural de pistão enquanto você corre, garantindo mais amortecimento e flexibilidade. Elas se combinam para uma tração durável.</p>
+                
+                <h2>Toque intuitivo</h2>
+                <p>Os pontos de toque no calcanhar e na língua criam uma sensação natural ao calçar e remover o tênis.</p>
+        
+            </p>
+        </aside>
 </div>
 <div id="max">
     <a href="{%url 'max'%}">
-        <img class="banner"id="banner_max"src="{%static 'ecommerceApp/img/max.jpg'%}"></img>
+        <img class="banner"id="banner_max" onmouseover="onlyRight(banner_max,banner_revolution,banner_downshifter,banner_excee,banner_court,banner_soon,info_max)" onmouseout="remove(info_max)" src="{%static 'ecommerceApp/img/max/max.jpg'%}"></img>
         </a>
+        <aside class="info" id="info_max">
+        <label id="price">R$1299,99</label>
+    <label id="name">Air Max Pulse Masculino</label>
+    <p><h1>MUITO MAIS QUE UM TENIS DE ACADEMIA.</h1>
+
+        <p>
+            Combinando característica urbana com resistência, o Air Max Pulse proporciona um toque underground à icônica linha Air Max. Sua entressola revestida em tecido e elementos selados a vácuo dão destaque à sua natureza urbana. As cores inspiradas no cenário musical grime de Londres conferem resistência nas bordas. O amortecimento Air — atualizado a partir do Air Max 270 que é incrivelmente macio — proporciona conforto confiável, esteja você realizando as tarefas do dia ou aproveitando o clube.</p>
+        
+        <h2>
+            Nova Sensação</h2>
+        
+        <p>Inserimos um elemento de plástico na unidade Air. Isso significa que mais Air é utilizado a cada passada para uma experiência com máximo amortecimento.</p>
+        
+        <h2>Não Se Trata de um Tênis de Academia</h2>
+
+        <p>Ele pode parecer um ótimo tênis de academia, mas o design engloba todo um estilo de vida. Use-o com sua melhor roupa e ganhe as ruas.</p>
+
+        <h2>Origem do Nike Air Max</h2>
+        <p>O amortecimento Air revolucionário foi introduzido nos calçados Nike em 1978. O Air Max 1 foi lançado com tecnologia Air visível no calcanhar, permitindo aos fãs mais do que apenas a sensação do amortecimento Air. De repente, era possível enxergá-lo. Desde então, a próxima geração de tênis Air Max se tornou um sucesso entre atletas e colecionadores, oferecendo combinações de cores vibrantes e amortecimento leve e confiável.</p>
+
+    </p>
+</aside>
 </div>
 <div id="soon">
-        <img class="banner"id="banner_soon"src="{%static 'ecommerceApp/img/coming_soon.jpg'%}"></img>
+        <img class="banner"id="banner_soon" src="{%static 'ecommerceApp/img/coming_soon.jpg'%}"></img>
         </a>
 <form action="{%url 'platform'%}" method="POST">
     {%csrf_token%}

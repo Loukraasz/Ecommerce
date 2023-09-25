@@ -16,5 +16,9 @@ urlpatterns = [
     path("max/", views.max, name="max"),
     path("revolution/", views.revolution, name="revolution"),
     path("excee/", views.excee, name="excee"),
-    path("court/specs", views.court_specs, name="court_specs")
+    path("court/specs", views.court_specs, name="court_specs"),
+    path("excee/specs", views.excee_specs, name="excee_specs"),
+    path("max/specs", views.max_specs, name="max_specs"),
+    path("downshifter/specs", views.downshifter_specs, name="downshifter_specs"),
+    path("revolution/specs", views.revolution_specs, name="revolution_specs"),
 ]

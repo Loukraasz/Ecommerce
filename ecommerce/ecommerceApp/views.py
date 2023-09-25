@@ -171,6 +171,14 @@ def downshifter(request):
     return render(request, "polls/downshifter.html")
 def court_specs(request):
     return render(request, "polls/court_specs.html")
+def downshifter_specs(request):
+    return render(request, "polls/downshifter_specs.html")
+def excee_specs(request):
+    return render(request, "polls/excee_specs.html")
+def revolution_specs(request):
+    return render(request, "polls/revolution_specs.html")
+def max_specs(request):
+    return render(request, "polls/max_specs.html")
 
 
        

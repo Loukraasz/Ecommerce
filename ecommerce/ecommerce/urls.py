@@ -4,8 +4,7 @@ from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.index, name="index"),
-    path('login/',views.login , name="login"),
+    path('',views.login, name="login"),
     path('cad/',views.cad , name="cad"),
     path("platform/",views.platform, name="platform"),
     path("passwordChange/", views.passwordChange, name="passwordChange"),

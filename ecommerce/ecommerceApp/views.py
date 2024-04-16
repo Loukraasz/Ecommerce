@@ -5,8 +5,6 @@ from requests import JSONDecodeError
 from ecommerceApp import connector
 from ecommerceApp import sendEmail
 
-def index(request):
-    return render(request, "polls/index.html")
 
 def cad(request):
     if request.method == "GET":

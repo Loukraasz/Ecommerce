@@ -2,31 +2,3 @@
 body#corpo{
     background-image: url("../img/base2.jpg");
 }
-div#main{
-    margin-bottom: 50px;
-    width: 400px;
-    height: 450px;
-    margin: auto;
-    border:3px solid rgba(255,179,253,0.5);
-    background:transparent;
-    border-radius:20px;
-}
-div#main h1{
-    height: 50px;
-    color:aliceblue;
-    font-family: sans-serif;
-    text-align: center;
-}
-button.mainButton{
-    position: absolute;
-    font-family: sans-serif;
-    width: 100px;
-    height: 50px;
-    margin-top: 10px;
-    margin-left: 150px;
-    border-radius: 10px;
-}
-label.labelCheck{
-    display: block;
-    color:#0077ff;
-}

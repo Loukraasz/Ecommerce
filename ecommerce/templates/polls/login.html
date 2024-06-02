@@ -4,17 +4,24 @@
 <link rel="stylesheet" type="text/css" href="{%static 'ecommerceApp/css/login.css'%}">
 <script src="../static/ecommerceApp/javascript/validateLog.js"></script>
 <div id="main">
-    <h1>Faca Login</h1>
     <form id="formulario" action="{%url 'login' %}" method="post">
        {%csrf_token%}
-       <input type="text" name="lNome" id="logNome" class="logType" placeholder="Nome" onclick="okPass()">
-       <input type="password"name="lSenha" id="logSenha" class="logType" placeholder="Senha" onclick="okPass()">
+       <label class="inp" for="logNome">
+       <input type="text" name="lNome" id="logNome" class="logType" autocomplete="off" placeholder="Nome" onclick="okPass()">
+       <span class="focus-bg"></span>
+      </label>
+      <label class="inp" for="logSenha">
+      
+       <input type="password"name="lSenha" id="logSenha" class="logType" placeholder="Senha"  onclick="okPass()">
+       <span class="focus-bg"></span>
+      </label>
        <input type="checkbox" id="checkPass" name="checkP" onchange="passVisiForLog()">
        <label for="checkPass" class="labelCheck" id="labelC">Senha visivel</label>
        <span for="lSenha" name="lInvalid" class="spanLog" id="spanLogPassIn">{{invalid}}</span>
-       <button type="submit" class="mainButton" id="lEntrar">Entrar</button>
        <a id="aForgotPass" href="{%url 'passwordChange'%}">Esqueceu sua senha?</a>
        <a id="aRegister" href="{%url 'cad'%}">Nao tem uma conta? Registre-se</a>
+       <button type="submit" class="mainButton" id="lEntrar">Entrar</button>
+       
        </form>
 </div>
 {%endblock%}

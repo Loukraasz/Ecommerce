@@ -7,12 +7,11 @@
     <form id="formulario" action="{%url 'login' %}" method="post">
        {%csrf_token%}
        <label class="inp" for="logNome">
-       <input type="text" name="lNome" id="logNome" class="logType" autocomplete="off" placeholder="Nome" onclick="okPass()">
+       <input type="text" name="lNome" id="logNome" class="inpC" autocomplete="off" placeholder="Nome" onclick="okPass()">
        <span class="focus-bg"></span>
       </label>
       <label class="inp" for="logSenha">
-      
-       <input type="password"name="lSenha" id="logSenha" class="logType" placeholder="Senha"  onclick="okPass()">
+       <input type="password"name="lSenha" id="logSenha" class="inpC" placeholder="Senha"  onclick="okPass()">
        <span class="focus-bg"></span>
       </label>
        <input type="checkbox" id="checkPass" name="checkP" onchange="passVisiForLog()">

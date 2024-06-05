@@ -6,7 +6,7 @@
 <script src="../static/ecommerceApp/javascript/aside.js"></script>
 <div id="court">
     <a href="{%url 'court'%}">
-    <img class="banner"id="banner_court" name="teste" onmouseover="set(banner_court,banner_excee,banner_downshifter,banner_max,banner_revolution,banner_soon,info_court)" onmouseout="remove(info_court)"src="{%static 'ecommerceApp/img/court/court1.jpg'%}"></img>
+    <img class="banner"id="banner_court" name="teste" onmouseover="set(banner_court,banner_excee,banner_downshifter,banner_revolution,info_court)" onmouseout="remove(info_court)"src="{%static 'ecommerceApp/img/court/court1.jpg'%}"></img>
     </a>
     <aside class="info" id="info_court">
         <label id="price">R$390,00</label>
@@ -33,7 +33,7 @@
 </div>
 <div id="excee">
     <a href="{%url 'excee'%}">
-        <img class="banner"id="banner_excee" onmouseover="set(banner_excee,banner_court,banner_downshifter,banner_max,banner_revolution,banner_soon, info_excee)" onmouseout="remove(info_excee)" src="{%static 'ecommerceApp/img/excee/excee.jpg'%}"></img>
+        <img class="banner"id="banner_excee" onmouseover="set(banner_excee,banner_court,banner_downshifter,banner_revolution, info_excee)" onmouseout="remove(info_excee)" src="{%static 'ecommerceApp/img/excee/excee.jpg'%}"></img>
         </a>
         <aside class="info" id="info_excee">
             <label id="price">R$399,99</label>
@@ -60,7 +60,7 @@
 </div>
 <div id="downshifter">
     <a href="{%url 'downshifter'%}">
-        <img class="banner"id="banner_downshifter" onmouseover="set(banner_downshifter,banner_excee,banner_court,banner_max,banner_revolution,banner_soon,info_downshifter)" onmouseout="remove(info_downshifter)" src="{%static 'ecommerceApp/img/downshifter/downshifter.jpg'%}"></img>
+        <img class="banner"id="banner_downshifter" onmouseover="set(banner_downshifter,banner_excee,banner_court,banner_revolution,info_downshifter)" onmouseout="remove(info_downshifter)" src="{%static 'ecommerceApp/img/downshifter/downshifter.jpg'%}"></img>
         </a>
         <aside class="info" id="info_downshifter">
             <label id="price">R$349,99</label>
@@ -87,7 +87,7 @@
 </div>
 <div id="revolution">
     <a href="{%url 'revolution'%}">
-        <img class="banner"id="banner_revolution" onmouseover="set(banner_revolution,banner_downshifter,banner_excee,banner_court,banner_max,banner_soon,info_revolution)" onmouseout="remove(info_revolution)" src="{%static 'ecommerceApp/img/revolution/revolution.jpg'%}"></img>
+        <img class="banner"id="banner_revolution" onmouseover="set(banner_revolution,banner_downshifter,banner_excee,banner_court,info_revolution)" onmouseout="remove(info_revolution)" src="{%static 'ecommerceApp/img/revolution/revolution.jpg'%}"></img>
         </a>
         <aside class="info" id="info_revolution">
             <label id="price">R$229,99</label>
@@ -112,36 +112,6 @@
             </p>
         </aside>
 </div>
-<div id="max">
-    <a href="{%url 'max'%}">
-        <img class="banner"id="banner_max" onmouseover="onlyRight(banner_max,banner_revolution,banner_downshifter,banner_excee,banner_court,banner_soon,info_max)" onmouseout="remove(info_max)" src="{%static 'ecommerceApp/img/max/max.jpg'%}"></img>
-        </a>
-        <aside class="info" id="info_max">
-        <label id="price">R$1299,99</label>
-    <label id="name">Air Max Pulse Masculino</label>
-    <p><h1>MUITO MAIS QUE UM TENIS DE ACADEMIA.</h1>
-
-        <p>
-            Combinando característica urbana com resistência, o Air Max Pulse proporciona um toque underground à icônica linha Air Max. Sua entressola revestida em tecido e elementos selados a vácuo dão destaque à sua natureza urbana. As cores inspiradas no cenário musical grime de Londres conferem resistência nas bordas. O amortecimento Air — atualizado a partir do Air Max 270 que é incrivelmente macio — proporciona conforto confiável, esteja você realizando as tarefas do dia ou aproveitando o clube.</p>
-        
-        <h2>
-            Nova Sensação</h2>
-        
-        <p>Inserimos um elemento de plástico na unidade Air. Isso significa que mais Air é utilizado a cada passada para uma experiência com máximo amortecimento.</p>
-        
-        <h2>Não Se Trata de um Tênis de Academia</h2>
-
-        <p>Ele pode parecer um ótimo tênis de academia, mas o design engloba todo um estilo de vida. Use-o com sua melhor roupa e ganhe as ruas.</p>
-
-        <h2>Origem do Nike Air Max</h2>
-        <p>O amortecimento Air revolucionário foi introduzido nos calçados Nike em 1978. O Air Max 1 foi lançado com tecnologia Air visível no calcanhar, permitindo aos fãs mais do que apenas a sensação do amortecimento Air. De repente, era possível enxergá-lo. Desde então, a próxima geração de tênis Air Max se tornou um sucesso entre atletas e colecionadores, oferecendo combinações de cores vibrantes e amortecimento leve e confiável.</p>
-
-    </p>
-</aside>
-</div>
-<div id="soon">
-        <img class="banner"id="banner_soon" src="{%static 'ecommerceApp/img/coming_soon.jpg'%}"></img>
-        </a>
 <form action="{%url 'platform'%}" method="POST">
     {%csrf_token%}
     <button id="exitBt" >Sair</button>

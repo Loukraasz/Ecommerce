@@ -22,11 +22,12 @@ function setError(span,input){
     span.style.display = "block";   
 }
 function removeError(span,input){
-    input.style.border = " 3px solid  rgb(252, 189, 255)"; 
+    input.style.border = "none"
     span.style.display = "none";   
 }
 function okEmail(){
-    spanCadEmailExists.style.display = "none";  
+    spanCadEmailExists.style.display = "none";
+    spanCadErrorEmail.style.display = "none";  
 }
 function okName(){
     spanCadNomeExists.style.display = "none";

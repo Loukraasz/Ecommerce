@@ -2,6 +2,7 @@ import json
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from requests import JSONDecodeError
+import requests
 from ecommerceApp import connector
 from ecommerceApp import sendEmail
 
@@ -9,14 +10,23 @@ from ecommerceApp import sendEmail
 def cad(request):
     if request.method == "GET":
         return render(request, "polls/cad.html")
-    elif request.method == "POST":
+    else:
         name = request.POST.get("cNome"),
         email= request.POST.get("cEmail")
         password = request.POST.get("cSenha")
         nameStr = ''.join(name)
         data = {"name":f"{nameStr}", "email":email, "password":password, "sessionId":"."}
         connector.post(data)
-        return render(request, "polls/login.html")
+        emailExists = connector.getOne(email).status_code
+        if emailExists == 404:
+            return render(request, "polls/login.html")
+        else:
+            error = "Email Ja Existente" 
+            errorEmail = {"errorEmail":error}
+            return render(request, "polls/cad.html",context=errorEmail)
+        
+        
+        
 
 
 def platform(request):

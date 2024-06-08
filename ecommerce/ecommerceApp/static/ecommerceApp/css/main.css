@@ -1,6 +1,6 @@
 @charset "UTF-8";
 body#corpo{
-    background-image: url("../img/base2.jpg");
+    background-image: url("../img/base.jpg");
 }
 div#main{
     margin-top:200px;

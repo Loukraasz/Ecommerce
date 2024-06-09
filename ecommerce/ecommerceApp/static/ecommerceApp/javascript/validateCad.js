@@ -2,23 +2,11 @@
 funcao send(), responsavel por validar e impedir o envio de formulario caso os requisitos nao sejam atingidos
 */
 const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-function send(){
-    mainForm.addEventListener("submit", false,(e)=>{
-    e.preventDefault();
-    nameValidate();
-    emailValidate();
-    passwordValidate();
-    confPasswordValidate();
-    okName();
-    
-    })
-}
 
 /*
 funcao setError() , okEmail() removeError(), responsaveis por remover ou acionar mensagens de erros do formulario
 */
 function setError(span,input){
-    input.style.border = "red 2px solid"; 
     span.style.display = "block";   
 }
 function removeError(span,input){

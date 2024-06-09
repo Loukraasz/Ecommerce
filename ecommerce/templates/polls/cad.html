@@ -15,7 +15,7 @@
        <span for="cadNome" class="spanCad" id="spanCadNomeNot">{{notUser}}</span>
     </label>
     <label class="inp" for="cadEmail">
-       <input type="Email" name="cEmail" id="cadEmail" required="off"  class="inpC"placeholder="Email" oninput="emailValidate()" onclick="okEmail()">
+       <input type="Email" name="cEmail" id="cadEmail" class="inpC"placeholder="Email" oninput="emailValidate()" onclick="okEmail()">
        <span class="focus-bg"></span>
        <span for="cadEmail" class="spanCad" id="spanCadEmail">insira um email valido</span>
        <span for="cadEmail" class="spanCad" id="spanCadEmailExists">{{emailValid}}</span>
@@ -34,7 +34,7 @@
        <span for="cadConfSenha" class="spanCad" id="spanCadConfSenha">as senhas nao coincidem</span>
     </label>
        <a id="aLog" href="{%url 'login' %}">Ja tem uma conta?</a>
-       <button type="submit" onclick="send(); return false" class="mainButton" id="cCriar">Criar</button>    
+       <button type="submit" class="mainButton" id="cCriar">Criar</button>    
 </div>
 {%endblock%}
 </BODY>

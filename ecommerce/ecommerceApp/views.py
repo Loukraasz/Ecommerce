@@ -14,16 +14,20 @@ def cad(request):
         name = request.POST.get("cNome"),
         email= request.POST.get("cEmail")
         password = request.POST.get("cSenha")
+        confPass = request.POST.get("cConfSenha")
         nameStr = ''.join(name)
         data = {"name":f"{nameStr}", "email":email, "password":password, "sessionId":"."}
-        connector.post(data)
         emailExists = connector.getOne(email).status_code
-        if emailExists == 404:
+        passLength = password.__len__()
+        nameLength = nameStr.__len__()
+        if emailExists == 404 and email != "" and nameLength > 3 and passLength >=8 and confPass == password:
+            connector.post(data)
             return render(request, "polls/login.html")
         else:
-            error = "Email Ja Existente" 
+            error = "Email Ja Existente ou Invalido" 
             errorEmail = {"errorEmail":error}
             return render(request, "polls/cad.html",context=errorEmail)
+        
         
         
         

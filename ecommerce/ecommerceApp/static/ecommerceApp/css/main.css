@@ -1,6 +1,7 @@
 @charset "UTF-8";
 body#corpo{
     background-image: url("../img/base.jpg");
+    overflow: hidden;
 }
 div#main{
     margin-top:200px;

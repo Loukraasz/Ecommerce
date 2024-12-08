@@ -1,6 +1,6 @@
 import json
 from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from requests import JSONDecodeError
 import requests
 from ecommerceApp import connector
@@ -9,6 +9,7 @@ from ecommerceApp import sendEmail
 
 def cad(request):
     if request.method == "GET":
+
         return render(request, "polls/cad.html")
     else:
         name = request.POST.get("cNome"),
@@ -61,7 +62,12 @@ def platform(request):
 
 def login(request):
     if request.method == 'GET':
-        return render(request, "polls/login.html")
+        session = request.COOKIES.get("sessionid")
+        userBLog = connector.getSid(session)
+        if userBLog:
+            return redirect("platform")
+        else:
+            return render(request, "polls/login.html")
     else:
         userLogin = request.POST.get("lNome")
         passLogin = request.POST.get("lSenha")
@@ -80,7 +86,7 @@ def login(request):
                 global dataLog
                 dataLog = {"name":jUser["name"],"email":jUser["email"],"password":jUser["password"],"sessionId":sessionUser}
                 connector.put(dataLog, jUser['email'])
-                return render(request, "polls/platform.html")
+                return redirect("platform")
             else:
                 invalid = "Usuario ou senhas invalidos"
                 invalids = {"invalid":invalid}
@@ -155,7 +161,7 @@ def log(request):
         userL = request.POST.get("lNome")
         user = connector.getOne(userL)
         if user.status_code == 404:
-            invalid = "email invalidos"
+            invalid = "email invalido"
             invalids = {"invalid":invalid}
             return render(request, 'polls/log.html', invalids)
         elif user.status_code == 200:
